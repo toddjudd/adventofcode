@@ -28,7 +28,7 @@ class CalendarDate
     url = "https://adventofcode.com/2024/day/#{@day}/input"
     token = ENV['AOC_SESSION_COOKIE']
     headers = {
-      'Cookie' => 'session=53616c7465645f5fabf99474080499a843fe99a255749de53faf52ba2ff43bf65b8e7e193881b2a49f795edd7b2000e431e7885a998bb36addf6d0c5fa417dcf'
+      'Cookie' => "session=#{token}"
     }
 
     puts "Getting data from: #{url}"
