@@ -1,6 +1,5 @@
 import fs from "fs";
-
-const input = fs.readFileSync("src/data/day3.txt", "utf-8");
+const input = fs.readFileSync("./data.txt", "utf-8");
 
 // Mul(x, y) returns x * y
 // x and y are numbers
