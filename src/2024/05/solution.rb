@@ -40,6 +40,7 @@ class Solution < CalendarDate
     end
 
     @rules = @rules.map {|x| x.split("|")}
+    # how would I make this into a class
     @input = @input.map do |item|
       item.split(",")
     end
