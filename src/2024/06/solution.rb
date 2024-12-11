@@ -134,7 +134,7 @@ class Map
     right_direction = get_right
     distance = 0
 
-    while right[0] != "Z"
+    while right[0] != "Z" && distance < 10000000
       if right[0] == "+"
         return true if move(right[1], right[2], right_direction[1])[0] == "#"
       end
@@ -144,8 +144,8 @@ class Map
       right = move(right[1], right[2], right_direction[1])
       distance += 1
       print "\rDistance: #{distance} & Direction: #{right_direction}"
-      return true if distance > 1000000
     end
+    return true if distance > 10000000
 
 
     return false
@@ -232,6 +232,8 @@ class Solution < CalendarDate
 
     while @map.on_map
       i +=1
+      system "clear"
+      @map.progress
       puts "Iteration: #{i}"
       puts "CurPos: #{@map.curPos[0]} #{@map.curPos[1]}"
       puts "CurDirection: #{@map.curDirection}"
@@ -241,8 +243,6 @@ class Solution < CalendarDate
 
       puts  "Possitions Passed: #{flatmap.count('X') + flatmap.count('+') + flatmap.count('|') + flatmap.count('-') +1}"
       puts "Possible Obstacles: #{@map.new_obstacles.count}"
-      @map.progress
-      system "clear"
       # @map.pretty_print
       # sleep(0.5)
       # require user input to continue
